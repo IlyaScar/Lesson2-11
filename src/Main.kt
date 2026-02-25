@@ -2,6 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
+    /** Должна быть написана одна функция calculate, не понятно что за три функции у тебя, нужно все передеать по заданию */
     //сорри тут все не очень красиво, я поправлю когда буду делать итерацию фикса замечаний
     fun calculateDevide(a: Double, b: Double, operator: String): Double? {
         return try {
@@ -10,7 +11,7 @@ fun main() {
             println("ErrorDevideByZero")
             null
         } finally {
-            println("Doesn't Work")
+            println("Doesn't Work") 
         }
     }
 
