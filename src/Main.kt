@@ -1,44 +1,32 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-
     /** Должна быть написана одна функция calculate, не понятно что за три функции у тебя, нужно все передеать по заданию */
     //сорри тут все не очень красиво, я поправлю когда буду делать итерацию фикса замечаний
-    fun calculateDevide(a: Double, b: Double, operator: String): Double? {
-        return try {
-            a / b
-        } catch (e: ArithmeticException) {
-            println("ErrorDevideByZero")
-            null
-        } finally {
-            println("Doesn't Work") 
-        }
+    try {
+        println(calculate(10.0, 2.0, "+_+_+++_"))
+    } catch (e: ArithmeticException) {
+        println("Error: Deviding on zero is incorrect")
+        null
+    } finally {
+        println("Finally block is complete")
     }
-
-    fun wrongOperator(a: Double, b: Double, operator: String): Double? {
-        if ((operator) == ":") throw ArithmeticException("WrongOperation")
-        else {
-            println("Success")
-        }
-        return null
-    }
-
-    fun calculateSum(a: Double, b: Double, operator: String): Double? {
-        return try {
-            a + b
-        } catch (e: ArithmeticException) {
-            println("Error")
-            null
-        } finally {
-            println("Doesn't Work")
-        }
-    }
-
-
-    //calculateDevide(10.0,0.0,"/")
-    wrongOperator(32.0,23.0,"+")
-    println(calculateSum(10.0,2.0,"+"))
 }
+fun calculate(a: Double, b: Double, operator: String): Double {
+    return when (operator) {
+        "+" -> a + b
+        "-" -> a - b
+        "*" -> a * b
+        "/" -> {
+            if (b == 0.0) throw ArithmeticException("Don't devide on zero")
+            a / b
+        }
+        else -> throw IllegalArgumentException("You chose the wrong operator")
+    }
+}
+
+
+
 
 
 
